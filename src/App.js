@@ -59,7 +59,7 @@ function Navigation({ currentPage, setPage }) {
             <img 
               src="/violet-logo.png" 
               alt="Violet Logo" 
-              className="h-12 w-auto transition-transform duration-300 group-hover:rotate-3"
+              className="h-16 w-auto rounded-2xl transition-transform duration-300 group-hover:rotate-3"
             />
           </button>
           
@@ -393,21 +393,17 @@ function AboutPage({ setPage }) {
           {/* Founder */}
           <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl shadow-xl p-8 md:p-12 mb-12 border border-purple-100">
             <div className="text-center mb-8">
-              <div className="w-24 h-24 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full mx-auto mb-6 flex items-center justify-center text-white text-4xl font-bold shadow-lg">
-                K
-              </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-2">Kurosh Kavoosi</h2>
               <p className="text-purple-700 font-semibold text-lg">Founder & Executive Director</p>
             </div>
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              Kurosh Kavoosi is a high school sophomore at Nashua High School South with a passion for leveraging 
-              technology and data science to improve public health outcomes. As founder of Violet, Kurosh combines 
-              his background in AI, business, and community leadership to create accessible health resources.
+              Kurosh Kavoosi is a high school sophomore at Nashua High School South with a passion for advancing cancer research and innovating the medical field. Aspiring to pursue a career in biomedical sciences, Kurosh founded Violet to bridge the gap between cutting-edge research and accessible public health resources.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              As a DECA International Career Development Conference (ICDC) finalist and founder of his school's UNICEF Club, Kurosh combines his background in business leadership and community service to create impactful health solutions. His commitment to developing research-backed tools for early cancer detection reflects his dedication to making a tangible difference in the fight against pancreatic cancer.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Kurosh is a DECA International Career Development Conference (ICDC) finalist, founder of his school's 
-              UNICEF Club, and a Google AI Certified professional. He is committed to making early cancer detection 
-              resources accessible to communities worldwide.
+              Through Violet, Kurosh is working to empower individuals with evidence-based risk assessment tools and comprehensive educational resources, with the ultimate goal of reducing pancreatic cancer mortality through early detection and awareness.
             </p>
           </div>
 
@@ -459,25 +455,61 @@ function ResourcesPage({ setPage }) {
     {
       category: "Risk Factors",
       items: [
-        { title: "Understanding Pancreatic Cancer Risk Factors", desc: "Comprehensive guide to smoking, diabetes, family history, and other risk factors" },
-        { title: "The Role of Genetics in Pancreatic Cancer", desc: "BRCA mutations, hereditary pancreatitis, and genetic screening" },
-        { title: "Lifestyle Factors: Diet, Exercise, and Prevention", desc: "Evidence-based guidance on modifiable risk factors" }
+        { 
+          title: "Comprehensive Review of Pancreatic Cancer Risk Factors", 
+          desc: "2025 umbrella review examining 80 potential risk factors from over 2.2 million cancer cases",
+          url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12206054/"
+        },
+        { 
+          title: "Environmental and Lifestyle Risk Factors", 
+          desc: "Evidence-based review of smoking, diet, alcohol, and other modifiable risk factors",
+          url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6780233/"
+        },
+        { 
+          title: "Latest Research on Risk Factors (2024)", 
+          desc: "Peer-reviewed study on modifiable and non-modifiable risk factors in pancreatic cancer pathogenesis",
+          url: "https://www.mdpi.com/2075-1729/14/8/980"
+        }
       ]
     },
     {
-      category: "Early Detection",
+      category: "Early Detection & Screening",
       items: [
-        { title: "Symptoms and Warning Signs", desc: "Recognizing early symptoms and when to see a doctor" },
-        { title: "Screening Guidelines for High-Risk Individuals", desc: "Who should get screened and what tests are available" },
-        { title: "The Importance of Family History", desc: "When to talk to your doctor about genetic counseling" }
+        { 
+          title: "Early Detection Strategies and Screening Methods", 
+          desc: "Comprehensive review of screening strategies, imaging methods, and diagnostic approaches",
+          url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8696234/"
+        },
+        { 
+          title: "Screening Guidelines for High-Risk Individuals", 
+          desc: "NCCN and ASGE guidelines for pancreatic cancer screening based on genetic factors and family history",
+          url: "https://www.facingourrisk.org/info/risk-management-and-treatment/screening-and-risk-reduction/by-cancer-type/pancreatic/screening"
+        },
+        { 
+          title: "Early Diagnosis and Detection Challenges", 
+          desc: "Clinical analysis of early detection challenges, precursor detection, and curative-intent surgery opportunities",
+          url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9893084/"
+        }
       ]
     },
     {
       category: "For Healthcare Providers",
       items: [
-        { title: "Clinical Guidelines for Risk Assessment", desc: "Evidence-based protocols for identifying high-risk patients" },
-        { title: "Patient Education Resources", desc: "Downloadable materials for your practice" },
-        { title: "Latest Research and Studies", desc: "Peer-reviewed research on pancreatic cancer prevention" }
+        { 
+          title: "Clinical Practice Guidelines & Protocols", 
+          desc: "Evidence-based protocols for identifying high-risk patients and screening recommendations",
+          url: "https://www.uchicagomedicine.org/cancer/types-treatments/pancreatic-cancer/early-detection"
+        },
+        { 
+          title: "Pancreatic Cancer Epidemiology and Trends", 
+          desc: "PMC review of pancreatic cancer epidemiology, risk factors, and emerging research trends",
+          url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8316912/"
+        },
+        { 
+          title: "Patient Education Resources", 
+          desc: "Pancreatic Cancer Action Network resources for patient education and early detection awareness",
+          url: "https://pancan.org/facing-pancreatic-cancer/diagnosis/early-detection/"
+        }
       ]
     }
   ];
@@ -540,12 +572,17 @@ function ResourcesPage({ setPage }) {
                   <div key={item.title} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-purple-200 cursor-pointer group hover:-translate-y-1">
                     <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">{item.title}</h3>
                     <p className="text-gray-600 mb-4">{item.desc}</p>
-                    <button className="text-purple-600 font-semibold hover:text-purple-800 transition flex items-center group">
-                      Read More 
+                    <a 
+                      href={item.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-purple-600 font-semibold hover:text-purple-800 transition flex items-center group"
+                    >
+                      Read Research 
                       <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
-                    </button>
+                    </a>
                   </div>
                 ))}
               </div>
@@ -677,10 +714,11 @@ function Footer({ setPage }) {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-700 rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-lg">V</span>
-              </div>
-              <h3 className="text-white text-xl font-bold">Violet</h3>
+              <img 
+                src="/violet-logo.png" 
+                alt="Violet Logo" 
+                className="h-12 w-auto mr-3 rounded-xl"
+              />
             </div>
             <p className="text-sm leading-relaxed mb-4">
               Empowering communities through pancreatic cancer awareness and early detection resources
